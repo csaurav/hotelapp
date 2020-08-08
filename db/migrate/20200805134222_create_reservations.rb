@@ -6,7 +6,7 @@ class CreateReservations < ActiveRecord::Migration[6.0]
       t.integer :room_id
       t.timestamps
       
-      # t.index ["room_id"], name: "index_reservations_on_room_id"
+      t.index ["room_id"], name: "index_reservations_on_room_id"
     end
   end
 end

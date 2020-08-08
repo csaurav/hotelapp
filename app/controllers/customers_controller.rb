@@ -1,10 +1,9 @@
 class CustomersController < ApplicationController
     before_action :set_customer, only: [:edit, :update]
-
+    #GET customers index
     def index
-      # byebug
         @customers = Customer.search(params[:search])
-        # byebug
+      
     end
 
     def edit
@@ -21,16 +20,7 @@ class CustomersController < ApplicationController
           end
     end
 
-    # find customer information
-    
-    def find_customers
-
-    end
-
-    def search_customer
-
-    end
-
+   
     private
 
     def set_customer
