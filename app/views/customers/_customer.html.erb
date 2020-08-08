@@ -1,0 +1,17 @@
+<div class="columns">
+  <div class="column">
+    <%=  customer_full_name(customer) %>
+  </div>
+
+  <% if(customer.reservation.present?) %>
+      
+    <div class="columns">
+        <div class="column">
+            <%= link_to("View Reservation", room_reservation_path(customer.reservation.id, customer.reservation.room_id), :class => "button is-dark is-outlined") %>
+        </div>
+    </div>
+  <% end %>
+
+</div>
+
+

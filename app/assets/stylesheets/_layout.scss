@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+.header {
+    background-color: #342E37;
+    padding: 2rem 1.5rem;
+}
+.section {
+    display: flex;
+    flex: 1 0 auto;
+    height: 150;
+
+}
+.footer {
+    background-color:#342E37;
+    padding:3rem 1.5rem;
+    height: 10vh;
+}

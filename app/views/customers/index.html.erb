@@ -1,0 +1,47 @@
+<h2 class="subtitle">Search Customers</h2>
+
+<%= form_tag customers_path, method: 'get' do %>
+    <div class="field">
+        <label class="label">Search</label>
+        <div class="control">
+            <%= text_field_tag :search, params[:search], class: :input, type: :text, placeholder: 'Search Customers' %>
+        </div>
+    </div>
+     <div class="field is-grouped">
+        <div class="control">
+            <%= submit_tag "Search", name: nil, class: "button is-link" %>
+        </div>
+    </div>
+<% end %>
+<div style="height: 10px"></div>
+<h2 class="subtitle">Customers</h2>
+
+
+<div class="container">
+    <div class="notification">
+        <% if @customers.present? %>
+            <div class="columns">
+                <div class="column">
+                    <h3 class="subtitle">Customer Name</h3>
+                </div>
+                <%# <div class="column">
+                    <h3 class="subtitle">Room Type</h3>
+                </div>
+                    <div class="column">
+                    <h3 class="subtitle">Price</h3>
+                </div>
+
+                <div class="column">
+                    <h3 class="subtitle">Checkin/Checkout</h3>
+                </div>
+                <div class="column">
+                    <h3 class="subtitle">Reservation Details</h3>
+                </div> %>
+            </div>
+            <%= render partial: "customer", collection: @customers %>
+            
+        <% else %>
+            <p>Ooops there are no customers right now! Do some Reservation.</p>
+        <% end %>
+    </div>
+</div>

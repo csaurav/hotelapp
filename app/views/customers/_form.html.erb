@@ -1,0 +1,54 @@
+<%= form_with(model: @customer, url: customer_path(@customer.id), method: "put", local: true) do |f|%>
+    <% if @customer.errors.any? %>
+        <div class="container">
+            <div class="notification">
+                <h2 class="has-text-danger"><strong><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</strong></h2>
+                <ul>                
+                    <% @customer.errors.full_messages.each do |msg| %>
+                        <li class="has-text-danger"><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
+            
+        </div>
+    <% end %>    
+    <div class="field">
+        <label class="label">First Name</label>
+        <div class="control">
+            <%= f.text_field :first_name, class: :input, type: :text, placeholder: 'Enter First Name' %>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Last Name</label>
+        <div class="control">
+            <%= f.text_field :last_name, class: :input, type: :text, placeholder: 'Enter Last Name' %>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Phone Number</label>
+        <div class="control">
+            <%= f.text_field :phone_number, class: :input, type: :text, placeholder: 'Enter number' %>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Gender</label>
+        <div class="control">
+            <%= f.select :gender, ['Male', 'Female'], class: :input, type: :text, placeholder: 'Text Input'%>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Address</label>
+        <div class="control">
+            <%= f.text_area :address, class: :input, type: :text, placeholder: 'Enter Address' %>
+        </div>
+    </div>
+     <div class="field is-grouped">
+        <div class="control">
+            <%= f.submit "Create", class: "button is-link" %>
+        </div>        
+    </div>
+<% end %>

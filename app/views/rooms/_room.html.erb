@@ -1,0 +1,29 @@
+<div class="columns">
+  <div class="column">
+    <%= room.room_no || ''%>
+  </div>
+  <div class="column">
+    <%= room.room_type || 'Not Available' %>
+  </div>
+  <div class="column">
+    <%= room.price || 'Not Available' %>
+  </div>
+  <div class="column">
+  <% if room.checked %>
+    Check Out in reservation detail page
+  <% else %>
+    <%= link_to("Check In", new_room_reservation_path(room.id), :class => "button is-dark is-outlined") %>
+  <% end %>  
+  </div>
+
+  <div class="column">
+    <% if(room.reservations.present?) %>
+        <%= link_to("View", room_reservation_path(room.id, room.reservations.last.id), :class => "button is-dark is-outlined") %>
+    <% else %>
+        No Reservation
+    <% end%>
+  </div>
+
+</div>
+
+
