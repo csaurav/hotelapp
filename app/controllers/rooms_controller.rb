@@ -1,7 +1,6 @@
 class RoomsController < ApplicationController
 
-   
-    # Ex:- scope :active, -> {where(:active => true)}
+    # show all rooms
     def index
         @rooms = Room.includes(:reservations).all
     end

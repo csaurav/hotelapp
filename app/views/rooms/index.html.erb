@@ -12,6 +12,8 @@
 
   </div>
 </div>
+
+
 <div class="columns">
   <div class="column">
     <h3 class="subtitle">Room No</h3>
@@ -30,5 +32,11 @@
     <h3 class="subtitle">Reservation Details</h3>
   </div>
 </div>
-<%= render partial: "room", collection: @rooms %>
+
+<% if (@rooms.present?) %>
+  <%= render partial: "room", collection: @rooms %>
+  
+<% else %>
+  <p>No rooms are there right now, Please execute rails db:seed to generate seed data</p>
+<% end %>
 
