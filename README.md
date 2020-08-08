@@ -12,9 +12,10 @@ Steps
 1. bundle install
 2. yarn install
 3. bundle exec rails db:drop db:migrate db:seed
-4. bundle exec rails server -p 3002
+4. bundle exec rails server
 
 For running the specs:
+
 5. rspec spec
 
 Please note: I have used the seed file for generating the data for Rooms table
