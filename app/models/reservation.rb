@@ -1,5 +1,5 @@
 class Reservation < ApplicationRecord
-    belongs_to :room
+    belongs_to :room, required: true
 
     # has_one :customer, dependent: :destroy
     has_one :customer
